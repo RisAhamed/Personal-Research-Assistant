@@ -1,0 +1,32 @@
+# Web App Framework
+streamlit
+
+# Core LangChain & LLM Integrations
+langchain
+langchain-core
+langchain-groq
+langchain-openai  # For the OpenRouter connection method
+
+# Agent Tools
+tavily-python     # For the advanced search tool
+beautifulsoup4    # For web scraping
+requests          # HTTP requests for scraping
+
+# RAG Components (if needed later)
+langchain-chroma
+langchain-text-splitters
+fastembed
+pydantic
+
+# Utilities
+python-dotenv
+
+# Development and Testing
+pytest
+black
+isort
+ruff
+pre-commit
+
+# Build tools
+pip-tools

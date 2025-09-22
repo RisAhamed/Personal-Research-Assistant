@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: research-assistant
+    env: docker
+    region: singapore
+    plan: free
+    branch: main
+    autoDeploy: true
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: OPENROUTER_BASE_URL  
+        value: https://openrouter.ai/api/v1
+      - key: YOUR_SITE_URL
+        sync: false
+      - key: YOUR_SITE_NAME
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: PORT
+        value: 8501
