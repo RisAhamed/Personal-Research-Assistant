@@ -123,14 +123,20 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     steps:
-    - name: Trigger Render deployment
-      # --- THIS IS THE FIX ---
-      # The if condition does not need the ${{...}} wrapper
-      if: secrets.RENDER_DEPLOY_HOOK_URL
+    - name: Trigger Render Deployment
       run: |
-        curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" \
-          -H "Content-Type: application/json" \
-          -d '{"ref": "${{ github.sha }}"}'
+        # This script now contains the conditional logic.
+        # It checks if the secret is present and not empty.
+        if [ -n "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" ]; then
+          echo "✅ Render deployment hook is present. Triggering deployment..."
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_URL }}" \
+            -H "Content-Type: application/json" \
+            -d '{"ref": "${{ github.sha }}"}'
+          echo "🚀 Check your Render dashboard for deployment progress."
+        else
+          echo "⚠️  RENDER_DEPLOY_HOOK_URL secret not set - skipping deployment trigger."
+          echo "ℹ️  Set this secret in your GitHub repo settings to enable automatic deploys."
+        fi
           
     - name: Deployment status
       run: |

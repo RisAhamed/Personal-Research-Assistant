@@ -30,4 +30,3 @@ pre-commit
 
 # Build tools
 pip-tools
-click
