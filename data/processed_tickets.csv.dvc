@@ -1,0 +1,5 @@
+outs:
+- md5: 32a42ef561bc7950cffceac09028f5c1
+  size: 256
+  hash: md5
+  path: processed_tickets.csv

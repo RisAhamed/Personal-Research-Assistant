@@ -1,0 +1,31 @@
+pandas
+notebook
+scikit-learn
+matplotlib
+seaborn
+# requirements.txt
+
+# Core LangChain Framework
+langchain
+ddgs
+# LLM Integrations (Groq for cloud, Ollama for local)
+langchain-groq
+langchain-community
+ollama
+pyautogen 
+langchain-google-genai
+# Utilities
+python-dotenv
+matplotlib 
+yfinance
+pydantic
+
+# Pre-built Tools
+duckduckgo-search
+newsapi-python
+langchain-chroma 
+langchain-text-splitters 
+chromadb
+# Vector Stores
+fastembed
+mlflow
